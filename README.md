@@ -1,1 +1,29 @@
-# Agent-Team-A
+# Agent-Team-A565 Agent Starter Project - Template
+This is a minimal, teachable agent skeleton for a computational social systems course.
+
+Quickstart
+Create a virtual environment
+Install dependencies: pip install -r requirements.txt
+Copy env: cp .env.example .env
+Run: python -m src.app
+By default the agent uses a mock LLM so it runs without any API keys. To connect a real model, edit src/llm_provider.py. Runtime selection order:
+
+Environment variables in .env (in which actual LLM API Credentails are defined)
+config/agent.yaml defaults
+What to edit for your project
+Role + purpose: prompts/system.md
+Style constraints: prompts/style.md
+Refusal behavior: prompts/refusal.md
+Policy rules: config/policies.yaml
+LLM integration: src/llm_provider.py
+Outputs
+Conversation + policy decisions are logged to logs/agent.log.
+The base structure for your AI Agent.
+
+Project Structure
+config/: Configuration files (agent.yaml, policies.yaml).
+prompts/: System and style instructions for the LLM.
+src/: Core Python logic including memory and provider settings.
+tests/: Scripts for adversarial testing (Red Teaming).
+Assignment Tasks
+Please refer to the course syllabus for specific implementation requirements for memory.py and agent.py.
