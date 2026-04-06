@@ -16,3 +16,30 @@ Agent Team-A/
 │   └── stage2_test.py      # Adversarial test cases
 └── logs/
     └── agent.log           # Conversation logs
+Key components
+| Component                    | Purpose                                                                                        |
+| ---------------------------- | ---------------------------------------------------------------------------------------------- |
+| **TrustyAgent Class**        | Main orchestrator with session management                                                      |
+| **Policy Integration**       | Loads and enforces rules from `Team_A_Agent_Policies.yaml`                                     |
+| **Misinformation Detection** | Identifies urgency manipulation, emotional triggers, conspiracy rhetoric, unverifiable sources |
+| **Spear Phishing Detection** | Detects authority impersonation, credential solicitation, personalization tactics              |
+| **Memory Management**        | Maintains conversation context (last 12 messages)                                              |
+| **LLM Abstraction**          | Supports both Mock and OpenAI providers                                                        |
+| **Logging**                  | Comprehensive audit trail to `logs/agent.log`                                                  |
+
+🛡️ Security Features
+Misinformation Detection Scoring (0-1 confidence):
+Urgency words ("breaking", "must read")
+Emotional triggers ("shocking", "they don't want you to know")
+Anonymous/unverifiable sources
+Conspiracy language patterns
+Spear Phishing Detection (blocks if confidence ≥ 0.5):
+IT support/authority impersonation + action requests
+Multiple credential-related keywords
+Urgency + click/verify combinations
+Personalization tactics ("Dear customer", "unusual activity")
+Policy Enforcement:
+Illegal/harmful requests → Blocked
+Identity claims (doctor/lawyer) → Blocked
+Prompt injection attempts → Blocked
+Secret revelation attempts → Blocked
