@@ -1,3 +1,9 @@
+How to Chat with Your Agent
+Since you are already in your virtual environment (.venv), run this command:
+
+PowerShell
+python -m src.app
+
 1. Unlock PowerShell
 Run this command first. When it asks for confirmation, type A (Yes to All) and hit Enter:
 
